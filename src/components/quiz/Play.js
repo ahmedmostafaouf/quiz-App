@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import question from '../../question.json';
 import isEmpty from '../../utools/is-empty';
 import M from 'materialize-css';
-import classnames from '/home/ahmed/quize-app/node_modules/classname/classname.js';
+import classnames from '../../../node_modules/classname/classname.js';
 
 import CorrectNotification from '../../assets/audio/correct-answer.mp3';
 import WrongNotification from '../../assets/audio/wrong-answer.mp3';
@@ -16,7 +16,7 @@ class Play extends Component {
     previousQuestion: {},
     answer: '',
     numberOfQuestion: 0,
-    numberOfAnswerQuestion: 0,
+    number: 0,
     currentQuestionIndex: 0,
     score: 0,
     correctAnswer: 0,
@@ -168,7 +168,7 @@ class Play extends Component {
         score: prevState.score + 1,
         correctAnswer: prevState.correctAnswer + 1,
         currentQuestionIndex: prevState.currentQuestionIndex + 1,
-        numberOfAnswerQuestion: prevState.numberOfAnswerQuestion + 1,
+        number: prevState.number + 1,
       }),
       () => {
         if (this.state.nextQuestion === undefined) {
@@ -195,7 +195,7 @@ class Play extends Component {
       (prevState) => ({
         wrongAnswer: prevState.wrongAnswer + 1,
         currentQuestionIndex: prevState.currentQuestionIndex + 1,
-        numberOfAnswerQuestion: prevState.numberOfAnswerQuestion + 1,
+        number: prevState.number + 1,
       }),
       () => {
         if (this.state.nextQuestion === undefined) {
