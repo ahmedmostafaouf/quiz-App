@@ -31,14 +31,14 @@
     text-align: center;
   }
   .options-container {
-    display: inline-block;
+    display: contents;
     width: 50%;
   }
   .option {
     background-color: $blue;
     border-radius: 30px;
     color: $white;
-    margin: $md auto;
+    margin: 1rem auto;
     padding: $normal;
     transition: 0.3% linear all;
     text-align: center;
@@ -84,4 +84,26 @@
 }
 .button-container button:last-child:hover {
   background-color: darken($red, 20%);
+}
+@media (max-width: $md-breakpoint) {
+  h2 {
+    font-size: 2.56rem;
+  }
+  .question h5 {
+    font-size: 1.2rem;
+    line-height: 28.5px;
+    margin-bottom: -1rem;
+    margin-top: 50px;
+  }
+  .button-container {
+    font-size: 10px;
+    text-align: center;
+    margin-left: -19px;
+    margin-bottom: -19px;
+  }
+  .options-container {
+    font-size: 10px;
+    text-align: center;
+    display: contents;
+  }
 }
